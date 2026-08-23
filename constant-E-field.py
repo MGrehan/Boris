@@ -44,7 +44,7 @@ def push(r, u, gamma, charge, mass, dt):
     u += charge * E(rplus) * dt / (2 * mass)
     gamma = np.sqrt(1 + np.sum(u ** 2))
 
-    r += dt * u / gamma
+    r = rplus + dt * u / (2 * gamma)
     return r, u, gamma
 
 def simulate_particle(particle_params):
